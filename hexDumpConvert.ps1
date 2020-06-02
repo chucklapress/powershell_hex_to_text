@@ -3,6 +3,10 @@
 #$hex.Split(" ") | forEach {[char]([convert]::toint16($_,16))} | forEach {$result = $result + $_}
 #$result
 
+# This method converts raw hex dump to text
 $hex = Read-Host "enter your hex dump: "
 $hex.Split(" ") | forEach {[char]([convert]::toint16($_,16))} | forEach {$result = $result + $_}
 Write-Host "Here are your results:"$result
+
+$otherwayaround = Read-Host "enter your text strimg to convert to hex: "
+$otherwayaround | Format-Hex
